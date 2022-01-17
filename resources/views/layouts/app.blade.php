@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('storage/scss/main.css')}}" rel="stylesheet">
+    <link href="{{asset('storage/scss/toastr.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -80,5 +82,11 @@
             @yield('content')
         </main>
     </div>
+    <script src="{{ asset('storage/js/components/jQuery.js') }}"></script>
+    <script src="{{ asset('storage/js/components/popper.js') }}"></script>
+    <script src="{{ asset('storage/js/components/style.js') }}"></script>
+    <script src="{{ asset('storage/js/components/moment.js') }}"></script>
+    <script src="{{ asset('storage/js/components/toastr.js') }}"></script>
+    <script src="{{ asset('storage/js/api/product.js') }}"></script>
 </body>
 </html>
