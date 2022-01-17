@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id',
+        'title',
+        'description',
+        'price',
+        'quantity',
+    ];
+    public function User(){
+        return $this->belongsToMany(User::class)->withTimestamps();
+    }
 }
