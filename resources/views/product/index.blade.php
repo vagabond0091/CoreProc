@@ -26,12 +26,12 @@
             </div>
     </div>
     <!-- Modal Add Product -->
-    <div class="modal" tabindex="-1" role="dialog">
+    <div class="modal add" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Add Product</h5>
-                <button type="button" class="close btn-danger" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close-add btn-danger" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true " class="fs-5">&times;</span>
                 </button>
             </div>
@@ -67,7 +67,52 @@
             </div>
             </div>
         </div>
+    </div>
+
+    <!-- Modal Update Product -->
+    <div class="modal update" tabindex="-1" role="dialog" id="updateProduct">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Update Product</h5>
+                <button type="button" class="close-update btn-danger " data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true " class="fs-5">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group mt-2">
+                    <label>Title:</label>
+                    <input type="text" class="form-control mt-2" id="titleUpdate" placeholder="Title">
+                </div>
+                <div class="form-group mt-2">
+                    <label >Description:</label>
+                    <textarea class="form-control mt-2" id="descriptionUpdate" rows="3"></textarea>
+                </div>
+                <div class="form-group mt-2 image">
+                   
+
+                </div>
+                <div class="form-group mt-2">
+                    <label >Product Image:</label>
+                    <input type="file" class="form-control mt-2 imageUpdate" id="imageUpdate" placeholder="Product Image">
+                </div>
+                <div class="form-group mt-2">
+                    <label >Price:</label>
+                    <input type="number" class="form-control mt-2" id="priceUpdate" placeholder="Price">
+                </div>
+                <div class="form-group mt-2">
+                    <label >Quantity:</label>
+                    <input type="number" class="form-control mt-2" id="qtyUpdate" placeholder="Quantity">
+                </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary uploadProduct" id="uploadProduct">Save</button>
+
+            </div>
+            </div>
         </div>
+    </div>
     @endsection
 
  

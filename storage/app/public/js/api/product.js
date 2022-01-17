@@ -37,7 +37,7 @@
                             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                             dataType: "json",
                             success: function(response) {
-                                console.log(response);
+                              
                                 if(response.success == true){
                                     toastr.success(response.message);
                                     setInterval(function() {
@@ -76,43 +76,5 @@
               reader.readAsDataURL(image);
           }   
     })
-    var user_id = $('#user_id').val();
-    if(user_id != null){
-        $.ajax({
-            type: "GET",
-            url: `/api/getAllProducts/${user_id}`,
-            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
     
-         
-            dataType: "json",
-            success: function(response) {
-                console.log(response.data);
-                console.log(response.data[0].product);
-                if(response.success == true){   
-                    response.data[0].product.map((items)=>{
-                        console.log(items);
-                        let div = $("<div/>",{"class": "card mr-3", "style":"width:18rem;"});
-                        div.append([`
-                            <img class="card-img-top" src="${items.image_link}" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Title: ${items.title}</h5>
-                                <p class="card-text">Description: ${items.description}</p>
-                                <p class="card-text">Price: ₱${items.price}</p>
-                                <p class="card-text">Quantity: ${items.quantity}</p>
-                                <div class="cta-wrapper">
-                                <button class="btn btn-primary">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
-                                </div>
-                            </div>
-                        `])
-                        $('.product-container').append(div);
-                    });
-                }
-            },
-            error: function(error) {
-                console.log(error);
-            }
-        
-          })
-    }
   })(jQuery); 

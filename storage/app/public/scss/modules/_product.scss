@@ -1,6 +1,12 @@
-.modal.show{
+.modal.add.show{
     display: block;
 }
 .card{
     margin-right: 20px;
+}
+.modal.update.show{
+    display: block;
+}
+body{
+    // overflow: hidden;
 }

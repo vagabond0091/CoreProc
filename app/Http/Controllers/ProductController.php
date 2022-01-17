@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\User;
 use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use DB;
+use Auth;
 class ProductController extends Controller
 {
     /**
@@ -16,7 +17,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.index');
+        if(auth::check()){
+            return view('product.index');
+        }
+        else{
+           return redirect('/')->with('error','Unauthorized Person');
+        }
+      
     }
 
     /**
@@ -90,7 +97,14 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->image_link = $request->product_image;
+        $product->save();
+        return response()->json(['success'=>true,'message'=>'Product Updated Successfully',]);
     }
 
     /**
@@ -101,9 +115,21 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrfail($id);
+        $product->delete();
+        return response()->json([
+            'success'=>true,
+            'message'=>'Product Deleted Successfully'
+        ]);
     }
-    public function getAllProducts($id){
+    public function getAllProductsByUser($id){
+        $product = User::with('Product')->where('id','=',$id)->get();
+        return response()->json([
+            'data'=>$product,
+            'success'=>true
+        ]);
+    }
+    public function getAllProducts(){
         $product = User::with('Product')->get();
         return response()->json([
             'data'=>$product,

@@ -1,10 +1,17 @@
 (function($) {
   $('#addProduct').on("click",function(e){
       e.preventDefault();
-      $('.modal').toggleClass('show');
+      $('.modal.add').toggleClass('show');
   })
-  $('.close.btn-danger').on("click",function(e){
+  $('.close-add.btn-danger').on("click",function(e){
       e.preventDefault()
-      $('.modal').removeClass('show');
+      $('.modal.add').removeClass('show');
   })
+  $('.close-update.btn-danger').on("click",function(e){
+    e.preventDefault()
+    $('#updateProduct').removeClass('show');
+})
+// $('.btn.btn-primary.uploadProduct').on("click",function(e){
+//     console.log('asdasd')
+// })
 })(jQuery); 

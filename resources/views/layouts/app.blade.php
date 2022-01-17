@@ -87,6 +87,9 @@
     <script src="{{ asset('storage/js/components/style.js') }}"></script>
     <script src="{{ asset('storage/js/components/moment.js') }}"></script>
     <script src="{{ asset('storage/js/components/toastr.js') }}"></script>
+    <script src="{{ asset('storage/js/api/getAllProducts.js') }}"></script>
     <script src="{{ asset('storage/js/api/product.js') }}"></script>
+    <script src="{{ asset('storage/js/api/updateProduct.js') }}"></script>
+    <script src="{{ asset('storage/js/api/deleteProduct.js') }}"></script>
 </body>
 </html>
