@@ -11,7 +11,9 @@
     e.preventDefault()
     $('#updateProduct').removeClass('show');
 })
-// $('.btn.btn-primary.uploadProduct').on("click",function(e){
-//     console.log('asdasd')
-// })
+
+$('.close-singleProduct.btn-danger').on("click",function(e){
+    e.preventDefault()
+    $('.modal.singleProduct').removeClass('show');
+})
 })(jQuery); 

@@ -28,6 +28,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     CoreProc
                 </a>
+              
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -35,7 +36,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                        Products
+                    </a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -87,7 +90,8 @@
     <script src="{{ asset('storage/js/components/style.js') }}"></script>
     <script src="{{ asset('storage/js/components/moment.js') }}"></script>
     <script src="{{ asset('storage/js/components/toastr.js') }}"></script>
-    <script src="{{ asset('storage/js/api/getAllProducts.js') }}"></script>
+    <script src="{{ asset('storage/js/api/getAllProduct.js') }}"></script>
+    <script src="{{ asset('storage/js/api/getSingleProduct.js') }}"></script>
     <script src="{{ asset('storage/js/api/product.js') }}"></script>
     <script src="{{ asset('storage/js/api/updateProduct.js') }}"></script>
     <script src="{{ asset('storage/js/api/deleteProduct.js') }}"></script>
